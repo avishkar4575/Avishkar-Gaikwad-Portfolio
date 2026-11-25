@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avishkar Gaikwad | Portfolio</title>
+
+    <!-- Fonts (optional: the page still works with the fallback fonts if offline) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Literata:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- Connect the CSS file to this HTML file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Side panel: photo, name and navigation -->
+    <aside class="side">
+        <img class="side-photo" src="assets/profile.jpg" alt="Portrait of Avishkar Gaikwad">
+
+        <a class="side-name" href="#home">Avishkar Gaikwad</a>
+
+        <nav class="side-nav" aria-label="Main">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <!-- EDIT: put your real profile links here -->
+        <div class="side-links">
+            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="#" target="_blank" rel="noopener">GitHub</a>
+        </div>
+    </aside>
+
+    <main class="main">
+
+        <!-- Home section -->
+        <section class="hero" id="home">
+            <p class="hero-hello">Hello, I'm</p>
+            <h1>Avishkar Gaikwad</h1>
+            <p class="hero-line">Computer Science student, curious builder, and future software engineer.</p>
+            <a class="btn" href="#contact">Get in touch</a>
+        </section>
+
+        <!-- About and Education -->
+        <section class="block" id="about">
+            <h2>About me</h2>
+            <p>
+                Hi! I'm Avishkar, a first-year B.Tech Computer Science student at NIAT in Pune.
+                I enjoy learning how technology works and turning ideas into practical projects.
+            </p>
+            <p>
+                I'm exploring web development, Python, Generative AI and robotics.
+                My goal is to grow into a software engineer who builds useful, thoughtful solutions.
+            </p>
+
+            <h3 class="sub">Education</h3>
+            <ol class="timeline">
+                <li>
+                    <span class="when">Currently pursuing, first year</span>
+                    <strong>B.Tech – Computer Science Engineering</strong>
+                    <span>NIAT, Pune</span>
+                </li>
+                <li>
+                    <span class="when">Completed</span>
+                    <strong>Higher Secondary Education (12th)</strong>
+                    <span>Dnyanganga International College</span>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Skills -->
+        <section class="block" id="skills">
+            <h2>Skills</h2>
+            <ul class="skill-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Python</li>
+                <li>Generative AI</li>
+            </ul>
+        </section>
+
+        <!-- Projects -->
+        <section class="block" id="projects">
+            <h2>Projects</h2>
+
+            <article class="project">
+                <h3>StudySmart</h3>
+                <p>A student-focused ML prototype exploring how study inputs can be used to estimate and support learning progress.</p>
+                <a class="text-link" href="#" target="_blank" rel="noopener">View project</a>
+            </article>
+
+            <article class="project">
+                <h3>MindMate AI</h3>
+                <p>An idea for an AI-powered student support experience focused on study stress and wellbeing awareness.</p>
+                <a class="text-link" href="#" target="_blank" rel="noopener">View project</a>
+            </article>
+        </section>
+
+        <!-- Contact -->
+        <section class="block" id="contact">
+            <h2>Contact</h2>
+
+            <div class="contact-layout">
+                <div class="contact-details">
+                    <!-- EDIT: your real email and city -->
+                    <p>Avishkar Gaikwad</p>
+                    <p><a href="mailto:your-email@example.com">your-email@example.com</a></p>
+                    <p>Pune, India</p>
+                </div>
+
+                <!-- Contact form with required fields (EDIT the email in "action") -->
+                <form class="contact-form" action="mailto:your-email@example.com"
+                      method="post" enctype="text/plain">
+
+                    <label>Your name
+                        <input type="text" name="fullname" required>
+                    </label>
+
+                    <label>Your email
+                        <input type="email" name="email" required>
+                    </label>
+
+                    <label>Subject
+                        <input type="text" name="subject" required>
+                    </label>
+
+                    <label>Message
+                        <textarea name="message" rows="4" required></textarea>
+                    </label>
+
+                    <button class="btn" type="submit">Send message</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2026 Avishkar Gaikwad</p>
+        </footer>
+
+    </main>
+
+    <!-- Highlights the current section in the side menu while scrolling -->
+    <script>
+        var links = document.querySelectorAll('.side-nav a');
+        var sections = document.querySelectorAll('main section');
+
+        function markCurrent() {
+            var current = 'home';
+            sections.forEach(function (section) {
+                if (section.getBoundingClientRect().top < window.innerHeight * 0.35) {
+                    current = section.id;
+                }
+            });
+            links.forEach(function (link) {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+            });
+        }
+
+        window.addEventListener('scroll', markCurrent);
+        markCurrent();
+    </script>
+
+</body>
+</html>
